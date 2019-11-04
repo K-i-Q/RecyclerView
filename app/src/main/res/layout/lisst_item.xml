@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/rocketName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rocket: Falcon 1"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/launchDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lauch Date: 03/11/2019 "
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/launchSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lauch Success: Succeed"
+        android:layout_below="@id/rocketName"/>
+
+    <TextView
+        android:id="@+id/payload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payload: Satellite"
+        android:layout_alignBottom="@id/launchSuccess"
+        android:layout_alignParentEnd="true"
+        />
+</RelativeLayout>
