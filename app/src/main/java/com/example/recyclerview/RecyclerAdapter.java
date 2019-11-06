@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
@@ -47,23 +45,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public int getItemCount() {
         return rocketModels.size();
     }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView){
             super(itemView);
-            ButterKnife.bind(this,itemView);
         }
         // each data item is just a string in this case
-        @BindView(R.id.rocketName)
-        TextView rocketName;
+        TextView rocketName = itemView.findViewById(R.id.rocketName);
 
-        @BindView(R.id.launchDate)
-        TextView launchDate;
+        TextView launchDate= itemView.findViewById(R.id.launchDate);;
 
-        @BindView(R.id.launchSuccess)
-        TextView launchSuccess;
+        TextView launchSuccess = itemView.findViewById(R.id.launchSuccess);;
 
-        @BindView(R.id.payload)
-        TextView payload;
+        TextView payload = itemView.findViewById(R.id.payload);
 
 
     }

@@ -8,32 +8,32 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView = findViewById(R.id.recyclerview);
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        recyclerView = findViewById(R.id.rview);
 
         RocketModel rocketModel = new RocketModel("falcon1", "03/11/2019",true,"satellite");
         RocketModel rocketModel2 = new RocketModel("falcon 9", "11/11/2019",false,"supplies");
         RocketModel rocketModel3 = new RocketModel("dragon", "20/12/2019",true,"satellite");
-
+        RocketModel rocketModel4 = new RocketModel("dragon2", "20/12/2019",true,"supplies");
         ArrayList<RocketModel> rocketModels = new ArrayList<>();
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(rocketModels);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
         rocketModels.add(rocketModel);
         rocketModels.add(rocketModel2);
         rocketModels.add(rocketModel3);
+        rocketModels.add(rocketModel4);
 
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recyclerAdapter);
+        mAdapter = new RecyclerAdapter(rocketModels);
+        recyclerView.setAdapter(mAdapter);
     }
 }
